@@ -41,6 +41,8 @@ public class Display {
     }
 
     public Display() {
+        
+        glfwDefaultWindowHints();
         glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE);
         glfwWindowHint(GLFW_VISIBLE, GLFW_TRUE);
 
@@ -57,8 +59,8 @@ public class Display {
 
         glfwSetWindowPos(
                 _window,
-                0,
-                0
+                200,
+                200
         );
 
         glfwMakeContextCurrent(_window);
