@@ -10,10 +10,13 @@ import static org.lwjgl.opengl.GL45.*;
 public class Display {
 
     private long _window;
-    private long _title;
+    private String _title = "Welcome to GameEngine.";
     private int _width;
     private int _height;
     private long _monitor;
+    private int posX;
+    private int posY;
+    
     private int _isVisible;
 
     public long getWindow() {
@@ -24,11 +27,11 @@ public class Display {
         this._window = window;
     }
 
-    public long getTitle() {
+    public String getTitle() {
         return _title;
     }
 
-    public void setTitle(long _title) {
+    public void setTitle(String _title) {
         this._title = _title;
     }
 
@@ -46,7 +49,7 @@ public class Display {
         glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE);
         glfwWindowHint(GLFW_VISIBLE, GLFW_TRUE);
 
-        this._window = glfwCreateWindow(200, 200, "Welcome to GameEngine.", 0, 0);
+        this._window = glfwCreateWindow(200, 200, _title, 0, 0);
 
         glfwSetKeyCallback(
                 _window,
